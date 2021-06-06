@@ -8,6 +8,19 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        // Specify the URL of the WordPress source
+        baseUrl: `localhost:8888/`,
+        protocol: `http`,
+        url: "http://localhost:8888/graphql",
+        // Indicates if a site is hosted on WordPress.com
+        hostingWPCOM: false,
+        // Specify which URL structures to fetch
+        includedRoutes: ["**/posts", "**/tags", "**/categories"],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
